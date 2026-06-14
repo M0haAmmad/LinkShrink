@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener | Premium Link Compressor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="glow-bg"></div>
+
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <div class="logo-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+        </div>
+        <h1>LinkShrink</h1>
+      </div>
+      <p class="subtitle">Transform long, messy links into short, elegant redirects instantly.</p>
+    </header>
+
+    <main>
+      <section class="card form-card">
+        <form id="shorten-form">
+          <div class="form-group">
+            <label for="long-url">Destination URL</label>
+            <div class="input-wrapper">
+              <input type="url" id="long-url" placeholder="https://example.com/very/long/path/to/shorten" required
+                autocomplete="off">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="custom-code">Custom Short Name <span class="optional">(optional)</span></label>
+            <div class="input-wrapper custom-wrapper">
+              <span class="domain-prefix" id="domain-prefix">lnk.sh/</span>
+              <input type="text" id="custom-code" placeholder="my-custom-name" minlength="3" maxlength="30"
+                autocomplete="off">
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span>Shorten URL</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+        </form>
+
+        <div id="error-message" class="alert alert-error" style="display: none;"></div>
+        <div id="success-result" class="alert alert-success" style="display: none;">
+          <div class="success-header">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd" />
+            </svg>
+            <p>Your custom link is ready!</p>
+          </div>
+          <div class="result-copy-row">
+            <input type="text" id="short-result-url" readonly>
+            <button id="copy-result-btn">Copy</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made By Mohammad BaniYounis | All rights reserved | 2026</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
